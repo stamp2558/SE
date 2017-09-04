@@ -1,0 +1,107 @@
+<template name="mapPage">
+
+  <div class="row">
+
+    <div class="col-xs-8">
+      <div class="map-container">
+        <!-- <iframe
+          width="1140"
+          height="500"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzgiOABUWqCUWLMX6bXkRnPn-K6jqfua0
+            &q=record+stores+in+Seattle" allowfullscreen>
+        </iframe> -->
+        {{> googleMap name="mapEx" options=mapOptions}}
+        <div style="display: none">
+          <div id="info-content">
+            <table>
+              <tr id="iw-url-row" class="iw_table_row">
+                <td id="iw-icon" class="iw_table_icon"></td>
+                <td id="iw-url"></td>
+              </tr>
+              <tr id="iw-address-row" class="iw_table_row">
+                <td class="iw_attribute_name">Address:</td>
+                <td id="iw-address"></td>
+              </tr>
+              <tr id="iw-phone-row" class="iw_table_row">
+                <td class="iw_attribute_name">Telephone:</td>
+                <td id="iw-phone"></td>
+              </tr>
+              <tr id="iw-rating-row" class="iw_table_row">
+                <td class="iw_attribute_name">Rating:</td>
+                <td id="iw-rating"></td>
+              </tr>
+              <tr id="iw-website-row" class="iw_table_row">
+                <td class="iw_attribute_name">Website:</td>
+                <td id="iw-website"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+    <!--     <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzgiOABUWqCUWLMX6bXkRnPn-K6jqfua0&callback=initMap">
+        </script> -->
+
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+
+      <!-- Card Personal-->
+         <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Emergenza Helpme</a>
+                </h4>
+              </div>
+              <div id="collapse1" class="panel-collapse collapse in">
+               <div class="row">
+
+                    <div class="col-xs-5">
+                        <img class="card-img-top" src="iron_man.jpg" alt="Card image cap" width=160px;>
+                    </div>
+
+                    <div class="col-xs-7">
+                      <p>คณะ : วิศวกรรมศาสตร์ศรีราชา</p>
+                      <p>สาขาวิชา : วิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์</p>
+                      <p>ชั้นปี : 1</p>
+                      <a href="#" class="btn btn-primary">Get info</a>
+                    </div>
+                  </div>
+
+                  <br>
+                  <div id="listing">
+                   <table id="resultsTable">
+                     <tbody id="results"></tbody>
+                   </table>
+                 </div>
+              </div>
+            </div>
+          </div>
+        <!-- Card Personal-->
+  </div>
+
+
+  </div>
+
+  <br>
+  <div>
+  	<form class="main form">
+  		<div class="form-group">
+	      <label class="control-label">Lat</label>
+	      <div class="controls">
+	          <input name="lat" id="lat" type="text" value="" placeholder="Your Lat" class="form-control"/>
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label">Lng</label>
+	      <div class="controls">
+	          <input name="lng" id="lng" type="text" value="" placeholder="Your Lng" class="form-control"/>
+	      </div>
+	    </div>
+	    <input type="submit" value="Submit" class="btn btn-primary"/>
+  	</form>
+  </div>
+</template>
